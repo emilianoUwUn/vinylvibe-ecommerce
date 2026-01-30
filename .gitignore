@@ -1,27 +1,57 @@
 # Variables de entorno
 .env
 *.env
+!.env.example
 
 # Dependencias
 node_modules/
 */node_modules/
+jspm_packages/
 
 # Logs
+logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
 # Build outputs
 dist/
 build/
+.next
+out
+.nuxt
 
 # Cache
 .npm
 .cache/
+.parcel-cache
+.eslintcache
+.stylelintcache
 
 # IDE
 .vscode/
 .idea/
+.vscode-test
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage
+*.lcov
+.nyc_output
+
+# Optional files
+.node_repl_history
+*.tgz
+.yarn-integrity
+*.tsbuildinfo

@@ -1,5 +1,7 @@
 # VinylVibe E-commerce
 
+Proyecto para el equipo de reclutamiento de Turing-AI
+
 Tienda online de vinilos con frontend React y backend Node.js/Express.
 
 ## Estructura del Proyecto
