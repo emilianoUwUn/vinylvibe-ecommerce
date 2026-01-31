@@ -1,0 +1,45 @@
+.admin-page h1 {
+  font-size: 2rem;
+  color: #FEF7ED;
+  margin-bottom: 0.75rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.admin-page p {
+  font-size: 0.9rem;
+  color: #CBD5E0;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .admin-page h1 {
+    font-size: 1.75rem;
+  }
+
+  .admin-page p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-page h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .admin-page p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-page h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .admin-page p {
+    font-size: 0.7rem;
+  }
+}

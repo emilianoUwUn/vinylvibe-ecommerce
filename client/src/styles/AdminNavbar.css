@@ -1,0 +1,73 @@
+.admin-navbar {
+  background-color: #2D3748;
+  border-bottom: 2px solid #EA580C;
+}
+
+.admin-navbar .logo {
+  color: #FEF7ED;
+}
+
+.admin-navbar .hamburger span {
+  background-color: #FEF7ED;
+}
+
+.admin-navbar .user-greeting {
+  color: #A0AEC0;
+}
+
+.admin-navbar .user-name {
+  color: #FEF7ED;
+}
+
+.admin-navbar .logout-btn-desktop {
+  background-color: #EA580C;
+  color: #1F2937;
+}
+
+.admin-navbar .logout-btn-desktop:hover {
+  background-color: #FEF7ED;
+}
+
+.admin-navbar .nav-link {
+  color: #CBD5E0;
+}
+
+.admin-navbar .nav-link::after {
+  background-color: #EA580C;
+}
+
+.admin-navbar .nav-link.active {
+  color: #EA580C;
+}
+
+.admin-navbar .mobile-dropdown-menu {
+  background-color: #2D3748;
+  border-bottom-color: #EA580C;
+}
+
+.admin-navbar .mobile-nav-link {
+  color: #CBD5E0;
+}
+
+.admin-navbar .mobile-nav-link:hover {
+  background-color: #1A202C;
+  color: #EA580C;
+}
+
+.admin-navbar .mobile-nav-link.active {
+  background-color: #1A202C;
+  color: #EA580C;
+}
+
+.admin-navbar .menu-divider {
+  background-color: #4A5568;
+}
+
+.admin-navbar .mobile-logout-btn {
+  color: #CBD5E0;
+}
+
+.admin-navbar .mobile-logout-btn:hover {
+  background-color: #1A202C;
+  color: #EA580C;
+}

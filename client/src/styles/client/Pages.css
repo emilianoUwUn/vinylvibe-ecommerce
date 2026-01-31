@@ -1,0 +1,45 @@
+.client-page h1 {
+  font-size: 2rem;
+  color: #1F2937;
+  margin-bottom: 0.75rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.client-page p {
+  font-size: 0.9rem;
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .client-page h1 {
+    font-size: 1.75rem;
+  }
+
+  .client-page p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .client-page h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .client-page p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .client-page h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .client-page p {
+    font-size: 0.7rem;
+  }
+}
