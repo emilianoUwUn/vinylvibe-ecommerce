@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
+import api from '../../api/axios';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -14,31 +15,29 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     setError('');
-    
+
     try {
-      const response = await fetch('http://localhost:3001/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-      
-      const data = await response.json();
-      
+      const response = await api.post('/login', { email, password });
+      const data = response.data;
+
       if (data.success) {
         login(data.token, data.user.firstName, data.user.role);
-        
+
         if (data.user.role === 'admin') {
           navigate('/admin/home');
         } else {
           navigate('/client/home');
         }
       } else {
+        // This might not be reached if axios throws on error status, but protecting just in case API returns success: false with 200 OK
         setError(data.error || 'Error al iniciar sesión');
       }
     } catch (error) {
-      setError('Error de conexión');
+      if (error.response && error.response.data && error.response.data.error) {
+        setError(error.response.data.error);
+      } else {
+        setError('Error de conexión');
+      }
     } finally {
       setLoading(false);
     }
@@ -58,30 +57,34 @@ export default function Login() {
         <div className="card">
           <form className="form" onSubmit={handleSubmit}>
             <div className="input-group">
-              <input 
-                type="email" 
-                placeholder="Email" 
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
                 className="input"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <input 
-                type="password" 
-                placeholder="Contraseña" 
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Contraseña"
                 className="input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
-            
+
             {error && (
-              <p style={{color: '#DC2626', fontSize: '0.875rem', textAlign: 'center'}}>
+              <p style={{ color: '#DC2626', fontSize: '0.875rem', textAlign: 'center' }}>
                 {error}
               </p>
             )}
-            
+
             <button type="submit" className="btn" disabled={loading}>
               {loading ? 'Accediendo...' : 'Acceder'}
             </button>
@@ -96,7 +99,7 @@ export default function Login() {
               <span className="separator-text">o</span>
               <div className="separator-line"></div>
             </div>
-            <Link to="/register" className="link" style={{fontWeight: 500, textTransform: 'uppercase'}}>
+            <Link to="/register" className="link" style={{ fontWeight: 500, textTransform: 'uppercase' }}>
               Crear cuenta nueva
             </Link>
           </div>
